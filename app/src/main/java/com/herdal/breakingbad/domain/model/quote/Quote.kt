@@ -1,3 +1,8 @@
 package com.herdal.breakingbad.domain.model.quote
 
-class Quote : ArrayList<QuoteItem>()
+data class Quote(
+    val author: String,
+    val quote: String,
+    val quote_id: Int,
+    val series: String
+)
