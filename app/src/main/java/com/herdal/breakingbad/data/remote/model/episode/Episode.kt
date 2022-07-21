@@ -1,5 +1,9 @@
-package com.herdal.breakingbad.domain.model.episode
+package com.herdal.breakingbad.data.remote.model.episode
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Episode(
     val air_date: String,
     val characters: List<String>,
@@ -8,4 +12,4 @@ data class Episode(
     val season: String,
     val series: String,
     val title: String
-)
+) : Parcelable

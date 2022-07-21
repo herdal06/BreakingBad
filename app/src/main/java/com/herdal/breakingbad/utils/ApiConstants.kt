@@ -1,4 +1,4 @@
-package com.herdal.breakingbad.core
+package com.herdal.breakingbad.utils
 
 object ApiConstants {
     object Endpoint {
