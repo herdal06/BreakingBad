@@ -1,5 +1,6 @@
 package com.herdal.breakingbad.di
 
+import com.herdal.breakingbad.data.remote.characters.CharactersApiService
 import com.herdal.breakingbad.utils.ApiConstants
 import dagger.Module
 import dagger.Provides
@@ -15,13 +16,12 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
-            .client(okHttpClient)
-            .baseUrl(ApiConstants.Endpoint.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
+    @Provides
+    fun provideCharacterService(): CharactersApiService =
+        Retrofit.Builder().baseUrl(ApiConstants.Endpoint.BASE_URL).addConverterFactory(
+            GsonConverterFactory.create()
+        )
+            .build().create(CharactersApiService::class.java)
+
 }
