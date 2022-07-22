@@ -4,4 +4,5 @@ import javax.inject.Inject
 
 class CharactersRepository @Inject constructor(private val apiService: CharactersApiService) {
     suspend fun getAllCharacters() = apiService.getAllCharacters()
+    suspend fun getAllEpisodes() = apiService.getAllEpisodes()
 }

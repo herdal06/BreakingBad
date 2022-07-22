@@ -46,7 +46,7 @@ class CharactersFragment : Fragment() {
             setHasFixedSize(true)
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             adapter = characterAdapter
-            recyclerViewCharacters.addItemDecoration(CharacterItemDecorator(requireContext()))
+            this.addItemDecoration(CharacterItemDecorator(requireContext()))
         }
     }
 
