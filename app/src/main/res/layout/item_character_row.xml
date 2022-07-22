@@ -29,8 +29,10 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="4dp"
             android:maxLines="1"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
+            android:typeface="monospace"
+            android:textColor="#2E2E2E"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -46,8 +48,9 @@
             android:background="@drawable/textview_round_corner"
             android:text="Status"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
+            android:typeface="monospace"
             app:layout_constraintStart_toEndOf="@+id/viewStatus"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,9 +58,9 @@
             android:id="@+id/viewStatus"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/textview_round_corner"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:src="@drawable/textview_round_corner"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

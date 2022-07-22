@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
 import com.herdal.breakingbad.databinding.FragmentEpisodesBinding
 import com.herdal.breakingbad.presentation.episodes.adapter.EpisodeAdapter
 import com.herdal.breakingbad.presentation.episodes.adapter.EpisodeItemDecorator
@@ -56,6 +57,12 @@ class EpisodesFragment : Fragment() {
             setHasFixedSize(true)
             adapter = episodeAdapter
             this.addItemDecoration(EpisodeItemDecorator(context))
+            this.addItemDecoration(
+                DividerItemDecoration(
+                    this.context,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
         }
     }
 
