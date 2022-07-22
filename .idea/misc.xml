@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/drawable/circle.xml" value="0.1" />
         <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/drawable/ic_episode.xml" value="0.18" />
+        <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/drawable/textview_round_corner.xml" value="0.1" />
         <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/layout/fragment_character_details.xml" value="0.22735507246376813" />
         <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/layout/fragment_characters.xml" value="0.2" />
         <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/layout/fragment_episode_details.xml" value="0.22735507246376813" />
         <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/layout/fragment_episodes.xml" value="0.22735507246376813" />
         <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/layout/fragment_home.xml" value="0.22735507246376813" />
-        <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/layout/item_character_row.xml" value="0.2" />
+        <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/layout/item_character_row.xml" value="0.507399577167019" />
         <entry key="..\:/Users/herda/AndroidStudioProjects/BreakingBad/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
       </map>
     </option>

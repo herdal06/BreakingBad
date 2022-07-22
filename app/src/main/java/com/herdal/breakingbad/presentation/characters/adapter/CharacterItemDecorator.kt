@@ -6,7 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.herdal.breakingbad.utils.extensions.dpToPx
 
-private const val ITEM_VERTICAL_MARGIN = 8
+private const val ITEM_VERTICAL_MARGIN = 16
 private const val ITEM_HORIZONTAL_MARGIN = 8
 
 class CharacterItemDecorator(context: Context) : RecyclerView.ItemDecoration() {

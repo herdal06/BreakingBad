@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.herdal.breakingbad.databinding.FragmentCharactersBinding
 import com.herdal.breakingbad.presentation.characters.adapter.CharacterAdapter
+import com.herdal.breakingbad.presentation.characters.adapter.CharacterItemDecorator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,6 +46,7 @@ class CharactersFragment : Fragment() {
             setHasFixedSize(true)
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
             adapter = characterAdapter
+            recyclerViewCharacters.addItemDecoration(CharacterItemDecorator(requireContext()))
         }
     }
 
