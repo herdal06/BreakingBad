@@ -6,7 +6,7 @@ import com.herdal.breakingbad.data.remote.model.episode.Episode
 import retrofit2.Response
 import retrofit2.http.GET
 
-interface CharactersApiService {
+interface ApiService {
     @GET(ApiConstants.Endpoint.CHARACTERS)
     suspend fun getAllCharacters(): Response<List<Character>>
 

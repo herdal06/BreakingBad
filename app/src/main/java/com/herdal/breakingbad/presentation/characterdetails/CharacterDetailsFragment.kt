@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.herdal.breakingbad.data.remote.model.character.Character
 import com.herdal.breakingbad.databinding.FragmentCharacterDetailsBinding
+import com.herdal.breakingbad.utils.extensions.loadImage
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,7 +40,13 @@ class CharacterDetailsFragment : Fragment() {
 
     private fun initViews() = with(binding) {
         val character = getArgs()
+        ivCharacter.loadImage(character.img)
         tvCharacterName.text = character.name
+        tvOccupation.text = character.occupation.toString()
+        tvStatus.text = character.status
+        tvNickName.text = "[" + character.nickname + "]"
+        tvBirthday.text = character.birthday
+        tvPortrayed.text = character.portrayed
     }
 
     override fun onDestroyView() {
