@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        supportActionBar?.hide()
 
         val navView: BottomNavigationView = binding.navView
 
