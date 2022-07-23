@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.herdal.breakingbad.data.remote.model.character.Character
+import com.herdal.breakingbad.data.remote.model.episode.Episode
 import com.herdal.breakingbad.databinding.FragmentEpisodesBinding
+import com.herdal.breakingbad.presentation.characters.CharactersFragmentDirections
 import com.herdal.breakingbad.presentation.episodes.adapter.EpisodeAdapter
 import com.herdal.breakingbad.presentation.episodes.adapter.EpisodeItemDecorator
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,7 +23,7 @@ class EpisodesFragment : Fragment() {
     private var _binding: FragmentEpisodesBinding? = null
     private val viewModel: EpisodesViewModel by viewModels()
     private val episodeAdapter: EpisodeAdapter by lazy {
-        EpisodeAdapter()
+        EpisodeAdapter(::onClickEpisode)
     }
 
     // This property is only valid between onCreateView and
@@ -64,6 +68,14 @@ class EpisodesFragment : Fragment() {
                 )
             )
         }
+    }
+
+    private fun onClickEpisode(episode: Episode) {
+        findNavController().navigate(
+            EpisodesFragmentDirections.actionEpisodesFragmentToEpisodeDetailsFragment(
+                episode
+            )
+        )
     }
 
     override fun onDestroyView() {

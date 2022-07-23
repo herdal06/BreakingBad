@@ -54,5 +54,8 @@
         <action
             android:id="@+id/action_episodeDetailsFragment_to_charactersFragment"
             app:destination="@id/charactersFragment" />
+        <argument
+            android:name="episode"
+            app:argType="com.herdal.breakingbad.data.remote.model.episode.Episode" />
     </fragment>
 </navigation>

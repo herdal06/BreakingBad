@@ -3,26 +3,23 @@ package com.herdal.breakingbad.presentation.episodes.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.herdal.breakingbad.R
 import com.herdal.breakingbad.base.BaseListAdapter
 import com.herdal.breakingbad.data.remote.model.episode.Episode
-import com.herdal.breakingbad.databinding.ItemEpisodeRowBinding
 
-class EpisodeAdapter : BaseListAdapter<Episode>(
-    itemsSame = { old, new -> old.episode_id == new.episode_id },
-    contentsSame = { old, new -> old == new }
-) {
+class EpisodeAdapter(private val onClickEpisode: ((episode: Episode) -> Unit)?) :
+    BaseListAdapter<Episode>(
+        itemsSame = { old, new -> old.episode_id == new.episode_id },
+        contentsSame = { old, new -> old == new }
+    ) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         inflater: LayoutInflater,
         viewType: Int
     ): RecyclerView.ViewHolder {
-        return EpisodeViewHolder(
-            ItemEpisodeRowBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_episode_row, parent, false)
+        return EpisodeViewHolder(view, onClickEpisode)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -32,6 +29,4 @@ class EpisodeAdapter : BaseListAdapter<Episode>(
             }
         }
     }
-
-
 }
