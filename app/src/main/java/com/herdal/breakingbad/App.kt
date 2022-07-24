@@ -1,4 +1,4 @@
-package com.herdal
+package com.herdal.breakingbad
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

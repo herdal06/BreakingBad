@@ -2,11 +2,13 @@ package com.herdal.breakingbad.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.herdal.breakingbad.R
 import com.herdal.breakingbad.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
@@ -32,6 +33,17 @@ class MainActivity : AppCompatActivity() {
                 R.id.charactersFragment, R.id.episodesFragment
             )
         )
+
+        // hide bottom nav
+        val noBottomNavigationIds = listOf(R.id.filterCharactersFragment)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            val shouldShowBottomNavigationBars =
+                noBottomNavigationIds.contains(destination.id).not()
+
+            binding.navView.isVisible = shouldShowBottomNavigationBars
+        }
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
