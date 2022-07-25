@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.herdal.breakingbad.R
 import com.herdal.breakingbad.data.remote.model.character.Character
 import com.herdal.breakingbad.databinding.FragmentCharactersBinding
@@ -45,6 +44,11 @@ class CharactersFragment : Fragment() {
         setupRecyclerView()
         observeLiveData()
         addMenuProvider()
+        fabOnClick()
+    }
+
+    private fun fabOnClick() = with(binding.floatingActionButton) {
+        this.setOnClickListener { findNavController().navigate(R.id.action_charactersFragment_to_filterCharactersFragment) }
     }
 
     private fun addMenuProvider() {
@@ -60,12 +64,6 @@ class CharactersFragment : Fragment() {
                 return when (menuItem.itemId) {
                     R.id.search_action -> {
                         // searchCharacters()
-                        true
-                    }
-                    R.id.filter_action -> {
-                        val bottomSheetDialogFragment = BottomSheetDialogFragment()
-                        bottomSheetDialogFragment.show(parentFragmentManager, "BottomSheetDialog")
-                        findNavController().navigate(R.id.action_charactersFragment_to_filterCharactersFragment)
                         true
                     }
                     else -> false

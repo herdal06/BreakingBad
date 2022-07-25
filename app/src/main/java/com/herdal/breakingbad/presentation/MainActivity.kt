@@ -8,7 +8,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.herdal.breakingbad.R
 import com.herdal.breakingbad.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,13 +34,24 @@ class MainActivity : AppCompatActivity() {
         )
 
         // hide bottom nav
-        val noBottomNavigationIds = listOf(R.id.filterCharactersFragment)
+        val noBottomNavigationIds =
+            listOf(R.id.filterCharactersFragment, R.id.filterCharactersFragment)
+        // hide toolbar
+        val noToolbarNavigationIds = listOf(R.id.filterCharactersFragment)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val shouldShowBottomNavigationBars =
                 noBottomNavigationIds.contains(destination.id).not()
 
+            val shouldShowToolbar = noToolbarNavigationIds.contains(destination.id).not()
+
             binding.navView.isVisible = shouldShowBottomNavigationBars
+
+            if (shouldShowToolbar) {
+                supportActionBar?.show()
+            } else {
+                supportActionBar?.hide()
+            }
         }
 
         setupActionBarWithNavController(navController, appBarConfiguration)
