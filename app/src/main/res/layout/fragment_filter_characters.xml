@@ -3,59 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
+    android:layout_height="wrap_content"
     android:padding="@dimen/activity_horizontal_margin">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tfInputWeight"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnfilter"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Quantity"
-        app:layout_constraintBottom_toTopOf="@+id/tfInputNote"
+        android:layout_marginVertical="@dimen/space_8"
+        android:text="FILTER"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.781"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewCharacterStatus" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/til_input_quantity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:maxLength="5" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tfInputNote"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="@dimen/space_8"
-        android:layout_marginEnd="16dp"
-        android:hint="Note"
+        android:text="Status"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCharacterStatus"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/btnfilter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tfInputWeight">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/til_input_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="0dp"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        android:layout_marginVertical="@dimen/space_8"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        app:iconGravity ="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tfInputNote"
-        app:layout_constraintStart_toStartOf="@+id/tfInputNote"
-        app:layout_constraintTop_toBottomOf="@+id/tfInputNote" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:listitem="@layout/item_filter_character" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
