@@ -5,14 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.herdal.breakingbad.R
 import com.herdal.breakingbad.databinding.FragmentFilterCharactersBinding
-import com.herdal.breakingbad.presentation.characters.adapter.CharacterItemDecorator
-import com.herdal.breakingbad.presentation.filtercharacter.adapter.FilterCharacterAdapter
+import com.herdal.breakingbad.presentation.filtercharacter.adapter.CharacterStatusAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,8 +19,8 @@ class FilterCharactersFragment : BottomSheetDialogFragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private val viewModel: FilterCharactersViewModel by viewModels()
-    private val characterStatusAdapter: FilterCharacterAdapter by lazy {
-        FilterCharacterAdapter()
+    private val characterStatusAdapter: CharacterStatusAdapter by lazy {
+        CharacterStatusAdapter()
     }
 
     override fun onCreateView(
@@ -40,6 +35,14 @@ class FilterCharactersFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
+        observe()
+    }
+
+    private fun observe() {
+        viewModel.characters.observe(viewLifecycleOwner) {
+            characterStatusAdapter.submitList(it)
+        }
+        viewModel.getAllCharacters()
     }
 
     private fun setupRecyclerView() = with(binding) {

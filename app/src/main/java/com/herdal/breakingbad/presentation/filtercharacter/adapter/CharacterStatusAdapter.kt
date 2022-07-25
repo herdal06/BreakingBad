@@ -8,7 +8,7 @@ import com.herdal.breakingbad.data.remote.model.character.Character
 import com.herdal.breakingbad.databinding.ItemFilterCharacterBinding
 
 
-class FilterCharacterAdapter() :
+class CharacterStatusAdapter() :
     BaseListAdapter<Character>(
         itemsSame = { old, new -> old.char_id == new.char_id },
         contentsSame = { old, new -> old == new }
@@ -18,7 +18,7 @@ class FilterCharacterAdapter() :
         inflater: LayoutInflater,
         viewType: Int
     ): RecyclerView.ViewHolder {
-        return FilterCharacterViewHolder(
+        return CharacterStatusViewHolder(
             ItemFilterCharacterBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -29,7 +29,7 @@ class FilterCharacterAdapter() :
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is FilterCharacterViewHolder -> {
+            is CharacterStatusViewHolder -> {
                 getItem(position)?.let { character -> holder.bind(character) }
             }
         }
