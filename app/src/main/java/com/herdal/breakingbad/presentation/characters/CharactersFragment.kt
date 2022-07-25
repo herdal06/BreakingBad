@@ -44,11 +44,6 @@ class CharactersFragment : Fragment() {
         setupRecyclerView()
         observeLiveData()
         addMenuProvider()
-        fabOnClick()
-    }
-
-    private fun fabOnClick() = with(binding.floatingActionButton) {
-        this.setOnClickListener { findNavController().navigate(R.id.action_charactersFragment_to_filterCharactersFragment) }
     }
 
     private fun addMenuProvider() {
@@ -72,11 +67,16 @@ class CharactersFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-    private fun setupRecyclerView() = with(binding.recyclerViewCharacters) {
-        setHasFixedSize(true)
-        layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        adapter = characterAdapter
-        this.addItemDecoration(CharacterItemDecorator(requireContext()))
+    private fun setupRecyclerView() = with(binding) {
+        recyclerViewCharacters.apply {
+            setHasFixedSize(true)
+            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            adapter = characterAdapter
+            this.addItemDecoration(CharacterItemDecorator(requireContext()))
+        }
+        floatingActionButton.setOnClickListener {
+            findNavController().navigate(R.id.action_charactersFragment_to_filterCharactersFragment)
+        }
     }
 
     private fun observeLiveData() {

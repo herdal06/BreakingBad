@@ -22,9 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="64dp"
+        android:backgroundTint="@color/colorOnPrimary"
         android:clickable="true"
         android:src="@drawable/ic_filter"
-        android:backgroundTint="@color/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white" />

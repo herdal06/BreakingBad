@@ -61,7 +61,7 @@
             android:name="episode"
             app:argType="com.herdal.breakingbad.data.remote.model.episode.Episode" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/filterCharactersFragment"
         android:name="com.herdal.breakingbad.presentation.filtercharacter.FilterCharactersFragment"
         android:label="Filter"
@@ -69,5 +69,5 @@
         <action
             android:id="@+id/action_filterCharactersFragment_to_charactersFragment"
             app:destination="@id/charactersFragment" />
-    </fragment>
+    </dialog>
 </navigation>
