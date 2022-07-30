@@ -21,19 +21,6 @@ class FilterCharactersViewModel @Inject constructor(private val repository: Char
         onError("Exception handled: ${throwable.localizedMessage}")
     }
 
-    fun getAllCharacters() {
-        job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = repository.getAllCharacters()
-            withContext(Dispatchers.Main) {
-                if (response.isSuccessful) {
-                    characters.postValue(response.body())
-                } else {
-                    Log.e("CharactersViewModel", "getAllMovies: ${response.code()}")
-                }
-            }
-        }
-    }
-
     private fun onError(message: String) {
         errorMessage.value = message
     }

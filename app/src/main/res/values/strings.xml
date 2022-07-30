@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">BreakingBad</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="breaking_bad">BREAKING BAD</string>
+    <string name="better_call_saul">Better Call Saul</string>
+    <string name="presumed_dead">Presumed dead</string>
+    <string name="alive">ALIVE</string>
+    <string name="deceased">Deceased</string>
+    <string name="filter">FILTER</string>
+    <string name="category">Category</string>
+    <string name="status">Status</string>
+
 </resources>

@@ -3,13 +3,10 @@ package com.herdal.breakingbad.presentation.characters
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.herdal.breakingbad.data.remote.characters.CharactersRepository
 import com.herdal.breakingbad.data.remote.model.character.Character
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
