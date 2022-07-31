@@ -1,4 +1,15 @@
-# BreakingBad
+# Breaking Bad
+
+#### Breaking Bad characters, episodes and more
+---------------
+
+#### App Screenshots
+
+| Characters | Character Details |
+|:-:|:-:|
+| ![Fist](https://github.com/herdal06/BreakingBad/blob/master/screenshots/characters.png?raw=true) | ![3](https://github.com/herdal06/BreakingBad/blob/master/screenshots/character_details.png?raw=true)
+| Episodes | Episode Details |
+| ![4](https://github.com/herdal06/BreakingBad/blob/master/screenshots/episodes.png?raw=true) | ![5](https://github.com/herdal06/BreakingBad/blob/master/screenshots/episode_details.png?raw=true)
 
 Libraries Used
 --------------
